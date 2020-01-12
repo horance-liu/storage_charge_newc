@@ -28,7 +28,7 @@ TEST_F(StorageTest, total_price_and_levels)
 
     double total = 0.0;
     int levels = 0;
-    charge(&tenant, &total, &levels);
+    tenant_charge(&tenant, &total, &levels);
 
     ASSERT_EQ(2185.0, total);
     ASSERT_EQ(1, levels);

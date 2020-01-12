@@ -40,7 +40,7 @@ typedef struct TenantTag
 /**
  * 租户计费算法
  * */
-void charge(const Tenant* tenant, double* total, int* levels);
+void tenant_charge(const Tenant* tenant, double* total, int* levels);
 
 #ifdef __cplusplus
 }

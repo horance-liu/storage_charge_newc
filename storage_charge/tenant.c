@@ -1,7 +1,7 @@
 #include "storage_charge/tenant.h"
 #include "storage_charge/lease.h"
 
-void charge(const Tenant* tenant, double* total, int* levels)
+void tenant_charge(const Tenant* tenant, double* total, int* levels)
 {
     for (int i = 0; i < tenant->numOfLeases && i < MAX_NUM_LEASE; i++)
     {
