@@ -16,6 +16,8 @@ typedef struct LeaseTag
     Storage* storage; /* 存储资源 */
 } Lease;
 
+double lease_charge(const Lease *lease);
+
 #ifdef __cplusplus
 }
 #endif

@@ -5,7 +5,6 @@
 extern "C" {
 #endif
 
-#define BASIC_BLOCK_SIZE 1024 /* 块存储的最大值 */
 #define MAX_NUM_LEASE  32   /* 每个租户的最大资源租期数 */
 
 /**
