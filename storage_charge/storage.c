@@ -26,6 +26,17 @@ static double charge_for_file_storage(int months)
     return price;
 }
 
+static double charge_for_object_storage(int capacity, int months)
+{
+    double price = 10;
+    if (months > BASIC_OBJECT_STORAG_MONTHS)
+    {
+        double exceed = months - BASIC_OBJECT_STORAG_MONTHS;
+        price += exceed * capacity * 1.5;
+    }
+    return price;
+}
+
 double storage_charge(const Storage* storage, int months)
 {
     double price = 0;
@@ -36,13 +47,7 @@ double storage_charge(const Storage* storage, int months)
     case ST_FILE_STORAGE:
         return charge_for_file_storage(months);
     case ST_OBJECT_STORAGE:
-        price += 10;
-        if (months > BASIC_OBJECT_STORAG_MONTHS)
-        {
-            double exceed = months - BASIC_OBJECT_STORAG_MONTHS;
-            price += exceed * storage->capacity * 1.5;
-        }
-        break;
+        return charge_for_object_storage(storage->capacity, months);
     default:
         break;
     }
