@@ -1,5 +1,9 @@
 #include "storage_charge/storage.h"
 
+#define BASIC_FILE_STORAGE_MONTHS 2
+#define BASIC_OBJECT_STORAG_MONTHS 3
+#define MONTHS_OF_YEAR 12
+
 void charge(const Tenant* tenant, double* total, int* levels)
 {
     int index = 0;
@@ -22,17 +26,17 @@ void charge(const Tenant* tenant, double* total, int* levels)
             break;
         case ST_FILE_STORAGE:
             price += 20;
-            if (tenant->leases[index]->months > 2)
+            if (tenant->leases[index]->months > BASIC_FILE_STORAGE_MONTHS)
             {
-                exceed = tenant->leases[index]->months - 2;
+                exceed = tenant->leases[index]->months - BASIC_FILE_STORAGE_MONTHS;
                 price += exceed * 1.5;
             }
             break;
         case ST_OBJECT_STORAGE:
             price += 10;
-            if (tenant->leases[index]->months > 3)
+            if (tenant->leases[index]->months > BASIC_OBJECT_STORAG_MONTHS)
             {
-                exceed = tenant->leases[index]->months - 3;
+                exceed = tenant->leases[index]->months - BASIC_OBJECT_STORAG_MONTHS;
                 price += exceed * tenant->leases[index]->storage->capacity * 1.5;
             }
             break;
@@ -41,7 +45,7 @@ void charge(const Tenant* tenant, double* total, int* levels)
         }
 
         if ((tenant->leases[index]->storage->type == ST_OBJECT_STORAGE)
-                && (tenant->leases[index]->months > 12))
+                && (tenant->leases[index]->months > MONTHS_OF_YEAR))
         {
             *levels += 1;
         }
