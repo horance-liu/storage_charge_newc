@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
-#include "storage_charge/storage.h"
 #include "storage_charge/lease.h"
+#include "storage_charge/tenant.h"
 
 namespace 
 {
