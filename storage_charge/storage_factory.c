@@ -8,7 +8,7 @@ static double storage_charge_default(int capacity, int months)
     return 0;
 }
 
-StorageCharge create_storage_charge_with_type(StorageType type)
+StorageCharge create_storage_charge(StorageType type)
 {
     switch (type)
     {

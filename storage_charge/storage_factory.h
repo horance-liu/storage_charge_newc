@@ -9,7 +9,7 @@ extern "C" {
 
 typedef double (*StorageCharge)(int capacity, int months);
 
-StorageCharge create_storage_charge_with_type(StorageType type);
+StorageCharge create_storage_charge(StorageType type);
 
 #ifdef __cplusplus
 }

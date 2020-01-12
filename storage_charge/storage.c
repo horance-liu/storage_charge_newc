@@ -4,7 +4,7 @@
 
 double storage_charge(const Storage* storage, int months)
 {
-    StorageCharge charge = create_storage_charge_with_type(storage->type);
+    StorageCharge charge = create_storage_charge(storage->type);
     return charge(storage->capacity, months);
 }
 
