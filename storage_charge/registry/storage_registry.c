@@ -12,6 +12,15 @@ static inline int storage_level_default(int months)
 
 static StorageBase storages[MAX_STORAGE_TYPE] = {};
 
+void storage_registry_init()
+{
+    for (int i = 0; i < MAX_STORAGE_TYPE; i++)
+    {
+        storages[i].charge = storage_charge_default;
+        storages[i].level = storage_level_default;
+    }
+}
+
 static StorageCharge safe_storage_charge(StorageCharge charge)
 {
     return charge != 0 ? charge : storage_charge_default;
@@ -31,7 +40,7 @@ void storage_registry_register(StorageType type, StorageCharge charge, StorageLe
     }
 }
 
-static StorageBase storage_default= {
+static StorageBase storage_default = {
     storage_charge_default, storage_level_default
 };
 

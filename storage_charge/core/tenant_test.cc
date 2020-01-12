@@ -5,6 +5,7 @@
 #include "storage_charge/block/block_storage.h"
 #include "storage_charge/file/file_storage.h"
 #include "storage_charge/object/object_storage.h"
+#include "storage_charge/registry/storage_registry.h"
 
 namespace 
 {
@@ -14,6 +15,7 @@ struct StorageTest : testing::Test
 private:
     void SetUp() override
     {
+        storage_registry_init();
         object_storage_register();
         file_storage_register();
         block_storage_register();

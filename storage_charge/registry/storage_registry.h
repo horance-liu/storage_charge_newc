@@ -16,6 +16,7 @@ typedef struct StorageBase
     StorageLevel level;
 } StorageBase;
 
+void storage_registry_init();
 void storage_registry_register(StorageType type, StorageCharge, StorageLevel);
 StorageBase* storage_registry_find(StorageType type);
 
