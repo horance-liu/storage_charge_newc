@@ -34,11 +34,11 @@ protected:
 TEST_F(StorageTest, total_price_and_levels)
 {
     Tenant tenant;
+    tenant_init(&tenant);
 
-    tenant.numOfLeases = 0;
-    tenant.leases[tenant.numOfLeases++] = &l1;
-    tenant.leases[tenant.numOfLeases++] = &l2;
-    tenant.leases[tenant.numOfLeases++] = &l3;
+    tenant_add(&tenant, &l1);
+    tenant_add(&tenant, &l2);
+    tenant_add(&tenant, &l3);
 
     double total = 0.0;
     int levels = 0;

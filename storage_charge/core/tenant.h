@@ -18,9 +18,9 @@ typedef struct TenantTag
     Lease* leases[MAX_NUM_LEASE]; /* 租期列表 */
 } Tenant;
 
-/**
- * 租户计费算法
- * */
+
+void tenant_init(Tenant* tenant);
+void tenant_add(Tenant* tenant, Lease* lease);
 void tenant_charge(const Tenant* tenant, double* total, int* levels);
 
 #ifdef __cplusplus
