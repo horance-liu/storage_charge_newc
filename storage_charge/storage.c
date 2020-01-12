@@ -26,11 +26,15 @@ double storage_charge(const Storage* storage, int months)
     return charge != 0 ? charge(storage->capacity, months) : 0;
 }
 
+typedef int (*StorageLevel)(int months);
+
+static StorageLevel create_storage_level(StorageType type)
+{
+    return type == ST_OBJECT_STORAGE ? object_storage_level : 0;
+}
+
 int storage_level(const Storage* storage, int months)
 {
-    if (storage->type == ST_OBJECT_STORAGE)
-    {
-        return object_storage_level(months);
-    }
-    return 0;
+    StorageLevel level = create_storage_level(storage->type);
+    return level != 0 ? level(months) : 0;
 }
