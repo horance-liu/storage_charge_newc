@@ -2,7 +2,7 @@
 
 #define BASIC_FILE_STORAGE_MONTHS 2
 
-double file_storage_charge(int months)
+double file_storage_charge(int capacity, int months)
 {
     double price = 20;
     if (months > BASIC_FILE_STORAGE_MONTHS)

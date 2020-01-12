@@ -10,7 +10,7 @@ double storage_charge(const Storage* storage, int months)
     case ST_BLOCK_STORAGE:
         return block_storage_charge(storage->capacity, months);
     case ST_FILE_STORAGE:
-        return file_storage_charge(months);
+        return file_storage_charge(storage->capacity, months);
     case ST_OBJECT_STORAGE:
         return object_storage_charge(storage->capacity, months);
     default:
