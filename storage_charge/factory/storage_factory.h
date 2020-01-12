@@ -13,6 +13,8 @@ typedef int (*StorageLevel)(int months);
 StorageCharge create_storage_charge(StorageType type);
 StorageLevel create_storage_level(StorageType type);
 
+void storage_register(StorageType type, StorageCharge, StorageLevel);
+
 #ifdef __cplusplus
 }
 #endif
