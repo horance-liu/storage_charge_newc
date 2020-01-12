@@ -4,11 +4,6 @@
 #define BASIC_FILE_STORAGE_MONTHS 2
 #define BASIC_OBJECT_STORAG_MONTHS 3
 
-static double charge_for_block_storage(int capacity, int months)
-{
-    return block_storage_charge(capacity, months);
-}
-
 static double charge_for_file_storage(int months)
 {
     double price = 20;
@@ -36,7 +31,7 @@ double storage_charge(const Storage* storage, int months)
     switch (storage->type)
     {
     case ST_BLOCK_STORAGE:
-        return charge_for_block_storage(storage->capacity, months);
+        return block_storage_charge(storage->capacity, months);
     case ST_FILE_STORAGE:
         return charge_for_file_storage(months);
     case ST_OBJECT_STORAGE:
