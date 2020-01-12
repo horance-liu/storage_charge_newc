@@ -51,9 +51,9 @@ static int level_for_lease(const Lease* lease)
 
 void charge(const Tenant* tenant, double* total, int* levels)
 {
-    for (int index = 0; index < tenant->numOfLeases && index < MAX_NUM_LEASE; index++)
+    for (int i = 0; i < tenant->numOfLeases && i < MAX_NUM_LEASE; i++)
     {
-        const Lease* lease = tenant->leases[index];
+        const Lease* lease = tenant->leases[i];
         *levels += level_for_lease(lease);
         *total += charge_for_lease(lease);
     }
