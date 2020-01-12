@@ -1,14 +1,9 @@
 #include "storage_charge/lease.h"
 #include "storage_charge/storage.h"
 
-static double charge_for_storage(const Storage* storage, int months)
-{
-    return storage_charge(storage, months);
-}
-
 double lease_charge(const Lease *lease)
 {
-    return charge_for_storage(lease->storage, lease->months);
+    return storage_charge(lease->storage, lease->months);
 }
 
 #define MONTHS_OF_YEAR 12
