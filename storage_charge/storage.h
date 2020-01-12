@@ -5,6 +5,26 @@
 extern "C" {
 #endif
 
+/**
+ * 存储资源类型
+ * */
+typedef enum
+{
+    ST_BLOCK_STORAGE,  /* 块存储 */
+    ST_FILE_STORAGE,   /* 文件存储 */
+    ST_OBJECT_STORAGE, /* 对象存储 */
+} StorageType;
+
+/**
+ * 存储资源
+ * */
+typedef struct StorageTag
+{
+    int capacity;     /* 存储容量，单位: MB */
+    StorageType type; /* 存储类型 */
+} Storage;
+
+
 #ifdef __cplusplus
 }
 #endif

@@ -1,5 +1,5 @@
 #include "storage_charge/lease.h"
-#include "storage_charge/tenant.h"
+#include "storage_charge/storage.h"
 
 #define BASIC_BLOCK_SIZE 1024 /* 块存储的最大值 */
 #define BASIC_FILE_STORAGE_MONTHS 2
