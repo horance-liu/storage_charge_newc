@@ -15,7 +15,12 @@ static double file_storage_charge(int capacity, int months)
     return price;
 }
 
+static void file_storage_install(StorageBase* storage)
+{
+    storage->charge = file_storage_charge;
+}
+
 void file_storage_register()
 {
-    storage_registry_register(ST_FILE_STORAGE, file_storage_charge, 0);
+    storage_registry_register(ST_FILE_STORAGE, file_storage_install);
 }

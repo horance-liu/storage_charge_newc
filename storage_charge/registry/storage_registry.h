@@ -16,8 +16,10 @@ typedef struct StorageBase
     StorageLevel level;
 } StorageBase;
 
+typedef void (*StorageInstall)(StorageBase*);
+
 void storage_registry_init();
-void storage_registry_register(StorageType type, StorageCharge, StorageLevel);
+void storage_registry_register(StorageType type, StorageInstall install);
 StorageBase* storage_registry_find(StorageType type);
 
 #ifdef __cplusplus

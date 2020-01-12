@@ -22,7 +22,13 @@ static int object_storage_level(int months)
     return months > MONTHS_OF_YEAR ? 1 : 0;
 }
 
+static void object_storage_install(StorageBase* storage)
+{
+    storage->charge = object_storage_charge;
+    storage->level  = object_storage_level;
+}
+
 void object_storage_register()
 {
-    storage_registry_register(ST_OBJECT_STORAGE, object_storage_charge, object_storage_level);
+    storage_registry_register(ST_OBJECT_STORAGE, object_storage_install);
 }

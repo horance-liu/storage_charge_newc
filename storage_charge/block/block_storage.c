@@ -15,7 +15,12 @@ static double block_storage_charge(int capacity, int months)
     return price;
 }
 
+static void block_storage_install(StorageBase* storage)
+{
+    storage->charge = block_storage_charge;
+}
+
 void block_storage_register()
 {
-    storage_registry_register(ST_BLOCK_STORAGE, block_storage_charge, 0);
+    storage_registry_register(ST_BLOCK_STORAGE, block_storage_install);
 }
