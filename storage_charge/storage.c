@@ -18,16 +18,11 @@ double storage_charge(const Storage* storage, int months)
     }
 }
 
-static int level_for_object_storage(int months)
-{
-    return object_storage_level(months);
-}
-
 int storage_level(const Storage* storage, int months)
 {
     if (storage->type == ST_OBJECT_STORAGE)
     {
-        return level_for_object_storage(months);
+        return object_storage_level(months);
     }
     return 0;
 }
