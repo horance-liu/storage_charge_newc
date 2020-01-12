@@ -6,13 +6,9 @@
 
 void charge(const Tenant* tenant, double* total, int* levels)
 {
-    int index = 0;
-    double price = 0.0;
-    double exceed = 0.0;
-
-    for (index = 0; index < tenant->numOfLeases && index < MAX_NUM_LEASE; index++)
+    for (int index = 0; index < tenant->numOfLeases && index < MAX_NUM_LEASE; index++)
     {
-        price = 0;
+        double price = 0;
 
         switch (tenant->leases[index]->storage->type)
         {
@@ -20,7 +16,7 @@ void charge(const Tenant* tenant, double* total, int* levels)
             price += 40;
             if (tenant->leases[index]->storage->capacity > BASIC_BLOCK_SIZE)
             {
-                exceed = tenant->leases[index]->storage->capacity - BASIC_BLOCK_SIZE;
+                double exceed = tenant->leases[index]->storage->capacity - BASIC_BLOCK_SIZE;
                 price += tenant->leases[index]->months * exceed * 3;
             }
             break;
@@ -28,7 +24,7 @@ void charge(const Tenant* tenant, double* total, int* levels)
             price += 20;
             if (tenant->leases[index]->months > BASIC_FILE_STORAGE_MONTHS)
             {
-                exceed = tenant->leases[index]->months - BASIC_FILE_STORAGE_MONTHS;
+                double exceed = tenant->leases[index]->months - BASIC_FILE_STORAGE_MONTHS;
                 price += exceed * 1.5;
             }
             break;
@@ -36,7 +32,7 @@ void charge(const Tenant* tenant, double* total, int* levels)
             price += 10;
             if (tenant->leases[index]->months > BASIC_OBJECT_STORAG_MONTHS)
             {
-                exceed = tenant->leases[index]->months - BASIC_OBJECT_STORAG_MONTHS;
+                double exceed = tenant->leases[index]->months - BASIC_OBJECT_STORAG_MONTHS;
                 price += exceed * tenant->leases[index]->storage->capacity * 1.5;
             }
             break;
