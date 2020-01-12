@@ -47,12 +47,16 @@ double lease_charge(const Lease *lease)
 
 #define MONTHS_OF_YEAR 12
 
-int lease_level(const Lease *lease)
+static int level_for_storage(const Storage* storage, int months)
 {
-    if ((lease->storage->type == ST_OBJECT_STORAGE)
-            && (lease->months > MONTHS_OF_YEAR))
+    if ((storage->type == ST_OBJECT_STORAGE) && (months > MONTHS_OF_YEAR))
     {
         return 1;
     }
     return 0;
+}
+
+int lease_level(const Lease *lease)
+{
+    return level_for_storage(lease->storage, lease->months);
 }
