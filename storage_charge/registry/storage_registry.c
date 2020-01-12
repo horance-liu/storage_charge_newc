@@ -22,7 +22,7 @@ static StorageLevel safe_storage_level(StorageLevel level)
     return level != 0 ? level : storage_level_default;
 }
 
-void storage_register(StorageType type, StorageCharge charge, StorageLevel level)
+void storage_registry_register(StorageType type, StorageCharge charge, StorageLevel level)
 {
     if (type < MAX_STORAGE_TYPE)
     {

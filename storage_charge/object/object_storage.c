@@ -24,5 +24,5 @@ static int object_storage_level(int months)
 
 void object_storage_register()
 {
-    storage_register(ST_OBJECT_STORAGE, object_storage_charge, object_storage_level);
+    storage_registry_register(ST_OBJECT_STORAGE, object_storage_charge, object_storage_level);
 }

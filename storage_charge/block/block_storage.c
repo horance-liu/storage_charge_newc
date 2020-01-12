@@ -17,5 +17,5 @@ static double block_storage_charge(int capacity, int months)
 
 void block_storage_register()
 {
-    storage_register(ST_BLOCK_STORAGE, block_storage_charge, 0);
+    storage_registry_register(ST_BLOCK_STORAGE, block_storage_charge, 0);
 }

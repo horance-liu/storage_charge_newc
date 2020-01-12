@@ -17,5 +17,5 @@ static double file_storage_charge(int capacity, int months)
 
 void file_storage_register()
 {
-    storage_register(ST_FILE_STORAGE, file_storage_charge, 0);
+    storage_registry_register(ST_FILE_STORAGE, file_storage_charge, 0);
 }
