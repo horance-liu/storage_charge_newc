@@ -1,18 +1,11 @@
 #include "storage_charge/storage.h"
 #include "storage_charge/block/block_storage.h"
 #include "storage_charge/file/file_storage.h"
-
-#define BASIC_OBJECT_STORAG_MONTHS 3
+#include "storage_charge/object/object_storage.h"
 
 static double charge_for_object_storage(int capacity, int months)
 {
-    double price = 10;
-    if (months > BASIC_OBJECT_STORAG_MONTHS)
-    {
-        double exceed = months - BASIC_OBJECT_STORAG_MONTHS;
-        price += exceed * capacity * 1.5;
-    }
-    return price;
+    return object_storage_charge(capacity, months);
 }
 
 double storage_charge(const Storage* storage, int months)
