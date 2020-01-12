@@ -12,3 +12,10 @@ double object_storage_charge(int capacity, int months)
     }
     return price;
 }
+
+#define MONTHS_OF_YEAR 12
+
+int object_storage_level(int months)
+{
+    return months > MONTHS_OF_YEAR ? 1 : 0;
+}

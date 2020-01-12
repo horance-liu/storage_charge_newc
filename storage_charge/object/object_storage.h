@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 double object_storage_charge(int capacity, int months);
+int object_storage_level(int months);
 
 #ifdef __cplusplus
 }
