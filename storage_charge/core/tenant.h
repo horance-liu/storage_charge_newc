@@ -7,7 +7,7 @@ extern "C" {
 
 #define MAX_NUM_LEASE  32   /* 每个租户的最大资源租期数 */
 
-typedef struct LeaseTag Lease;
+typedef struct Lease Lease;
 
 /**
  * 租户

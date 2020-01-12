@@ -23,8 +23,7 @@ fi
 
 echo "*******************************************************************************"
 echo "start to run tests..."
-
-./storage_charge/test_storage_charge --gtest_color=yes $1 $2
+make test
 
 if [ $? -ne 0 ]; then
     echo "FAILED!"

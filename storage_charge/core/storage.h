@@ -10,7 +10,7 @@ extern "C" {
 /**
  * 存储资源
  * */
-typedef struct StorageTag
+typedef struct Storage
 {
     int capacity;     /* 存储容量，单位: MB */
     StorageType type; /* 存储类型 */
