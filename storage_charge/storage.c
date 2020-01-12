@@ -2,14 +2,9 @@
 #include "storage_charge/storage_factory.h"
 #include "storage_charge/object/object_storage.h"
 
-static StorageCharge create_storage_charge(StorageType type)
-{
-    return create_storage_charge_with_type(type);
-}
-
 double storage_charge(const Storage* storage, int months)
 {
-    StorageCharge charge = create_storage_charge(storage->type);
+    StorageCharge charge = create_storage_charge_with_type(storage->type);
     return charge(storage->capacity, months);
 }
 
