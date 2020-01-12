@@ -1,18 +1,12 @@
 #include "storage_charge/storage.h"
+#include "storage_charge/block/block_storage.h"
 
-#define BASIC_BLOCK_SIZE 1024 /* 块存储的最大值 */
 #define BASIC_FILE_STORAGE_MONTHS 2
 #define BASIC_OBJECT_STORAG_MONTHS 3
 
 static double charge_for_block_storage(int capacity, int months)
 {
-    double price = 40;
-    if (capacity > BASIC_BLOCK_SIZE)
-    {
-        double exceed = capacity - BASIC_BLOCK_SIZE;
-        price += months * exceed * 3;
-    }
-    return price;
+    return block_storage_charge(capacity, months);
 }
 
 static double charge_for_file_storage(int months)

@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+double block_storage_charge(int capacity, int months);
+
 #ifdef __cplusplus
 }
 #endif
