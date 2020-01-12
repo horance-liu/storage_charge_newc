@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+typedef struct StorageTag Storage;
+
+/**
+ * 租期
+ * */
+typedef struct LeaseTag
+{
+    int months;       /* 租期时长 */
+    Storage* storage; /* 存储资源 */
+} Lease;
+
 #ifdef __cplusplus
 }
 #endif

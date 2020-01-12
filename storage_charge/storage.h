@@ -27,14 +27,7 @@ typedef struct StorageTag
     StorageType type; /* 存储类型 */
 } Storage;
 
-/**
- * 租期
- * */
-typedef struct LeaseTag
-{
-    int months;       /* 租期时长 */
-    Storage* storage; /* 存储资源 */
-} Lease;
+typedef struct LeaseTag Lease;
 
 /**
  * 租户

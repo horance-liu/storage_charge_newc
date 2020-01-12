@@ -1,4 +1,5 @@
 #include "storage_charge/storage.h"
+#include "storage_charge/lease.h"
 
 #define BASIC_FILE_STORAGE_MONTHS 2
 #define BASIC_OBJECT_STORAG_MONTHS 3
