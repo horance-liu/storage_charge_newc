@@ -1,11 +1,5 @@
 #include "storage_charge/factory/storage_factory.h"
 
-typedef struct StorageBase
-{
-    StorageCharge charge;
-    StorageLevel level;
-} StorageBase;
-
 static inline double storage_charge_default(int capacity, int months)
 {
     return 0;
@@ -49,4 +43,13 @@ void storage_register(StorageType type, StorageCharge charge, StorageLevel level
         storages[type].charge = safe_storage_charge(charge);
         storages[type].level  = safe_storage_level(level);
     }
+}
+
+static StorageBase storage_default= {
+    storage_charge_default, storage_level_default
+};
+
+StorageBase* storage_find(StorageType type)
+{
+    return type < MAX_STORAGE_TYPE ? &storages[type] : &storage_default;
 }
