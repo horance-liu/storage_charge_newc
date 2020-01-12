@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+double file_storage_charge(int months);
+
 #ifdef __cplusplus
 }
 #endif
