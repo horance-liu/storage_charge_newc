@@ -1,6 +1,6 @@
 #include "storage_charge/block/block_storage.h"
 #include "storage_charge/core/storage_type.h"
-#include "storage_charge/factory/storage_factory.h"
+#include "storage_charge/registry/storage_registry.h"
 
 #define BASIC_BLOCK_SIZE 1024 /* 块存储的最大值 */
 

@@ -1,6 +1,6 @@
 #include "storage_charge/object/object_storage.h"
 #include "storage_charge/core/storage_type.h"
-#include "storage_charge/factory/storage_factory.h"
+#include "storage_charge/registry/storage_registry.h"
 
 #define BASIC_OBJECT_STORAG_MONTHS 3
 

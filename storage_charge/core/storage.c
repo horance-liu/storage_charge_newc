@@ -1,5 +1,5 @@
 #include "storage_charge/core/storage.h"
-#include "storage_charge/factory/storage_factory.h"
+#include "storage_charge/registry/storage_registry.h"
 
 double storage_charge(const Storage* storage, int months)
 {

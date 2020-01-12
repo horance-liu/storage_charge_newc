@@ -1,4 +1,4 @@
-#include "storage_charge/factory/storage_factory.h"
+#include "storage_charge/registry/storage_registry.h"
 
 static inline double storage_charge_default(int capacity, int months)
 {
