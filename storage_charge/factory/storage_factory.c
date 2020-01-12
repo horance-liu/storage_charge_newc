@@ -12,20 +12,6 @@ static inline int storage_level_default(int months)
 
 static StorageBase storages[MAX_STORAGE_TYPE] = {};
 
-StorageCharge create_storage_charge(StorageType type)
-{
-    return type < MAX_STORAGE_TYPE ?
-           storages[type].charge :
-           storage_charge_default;
-}
-
-StorageLevel create_storage_level(StorageType type)
-{
-    return type < MAX_STORAGE_TYPE ?
-           storages[type].level :
-           storage_level_default;
-}
-
 static StorageCharge safe_storage_charge(StorageCharge charge)
 {
     return charge != 0 ? charge : storage_charge_default;
