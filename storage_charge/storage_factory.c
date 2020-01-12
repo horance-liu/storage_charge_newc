@@ -28,7 +28,7 @@ static int storage_level_default(int months)
     return 0;
 }
 
-StorageLevel create_storage_level_with_type(StorageType type)
+StorageLevel create_storage_level(StorageType type)
 {
     return type == ST_OBJECT_STORAGE ? object_storage_level : storage_level_default;
 }
