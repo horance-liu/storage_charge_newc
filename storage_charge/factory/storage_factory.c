@@ -1,6 +1,5 @@
 #include "storage_charge/factory/storage_factory.h"
 #include "storage_charge/block/block_storage.h"
-#include "storage_charge/file/file_storage.h"
 
 typedef struct StorageBase
 {
@@ -20,7 +19,6 @@ static inline int storage_level_default(int months)
 
 static StorageBase storages[MAX_STORAGE_TYPE] = {
     {block_storage_charge,  storage_level_default},
-    {file_storage_charge,   storage_level_default},
 };
 
 StorageCharge create_storage_charge(StorageType type)

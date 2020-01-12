@@ -2,6 +2,7 @@
 #include "storage_charge/core/storage.h"
 #include "storage_charge/core/lease.h"
 #include "storage_charge/core/tenant.h"
+#include "storage_charge/file/file_storage.h"
 #include "storage_charge/object/object_storage.h"
 
 namespace 
@@ -13,6 +14,7 @@ private:
     void SetUp() override
     {
         object_storage_register();
+        file_storage_register();
     }
 
 protected:

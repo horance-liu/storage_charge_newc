@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-double file_storage_charge(int capacity, int months);
+void file_storage_register();
 
 #ifdef __cplusplus
 }

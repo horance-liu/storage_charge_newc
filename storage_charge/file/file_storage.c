@@ -1,8 +1,10 @@
 #include "storage_charge/file/file_storage.h"
+#include "storage_charge/core/storage_type.h"
+#include "storage_charge/factory/storage_factory.h"
 
 #define BASIC_FILE_STORAGE_MONTHS 2
 
-double file_storage_charge(int capacity, int months)
+static double file_storage_charge(int capacity, int months)
 {
     double price = 20;
     if (months > BASIC_FILE_STORAGE_MONTHS)
@@ -11,4 +13,9 @@ double file_storage_charge(int capacity, int months)
         price += exceed * 1.5;
     }
     return price;
+}
+
+void file_storage_register()
+{
+    storage_register(ST_FILE_STORAGE, file_storage_charge, 0);
 }
