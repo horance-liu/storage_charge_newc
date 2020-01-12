@@ -44,13 +44,12 @@ void charge(const Tenant* tenant, double* total, int* levels)
     for (int index = 0; index < tenant->numOfLeases && index < MAX_NUM_LEASE; index++)
     {
         const Lease* lease = tenant->leases[index];
-        double price = charge_for_lease(lease);
         if ((lease->storage->type == ST_OBJECT_STORAGE)
                 && (lease->months > MONTHS_OF_YEAR))
         {
             *levels += 1;
         }
 
-        *total += price;
+        *total += charge_for_lease(lease);
     }
 }
