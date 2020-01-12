@@ -3,11 +3,6 @@
 #include "storage_charge/file/file_storage.h"
 #include "storage_charge/object/object_storage.h"
 
-static double charge_for_object_storage(int capacity, int months)
-{
-    return object_storage_charge(capacity, months);
-}
-
 double storage_charge(const Storage* storage, int months)
 {
     switch (storage->type)
@@ -17,7 +12,7 @@ double storage_charge(const Storage* storage, int months)
     case ST_FILE_STORAGE:
         return file_storage_charge(months);
     case ST_OBJECT_STORAGE:
-        return charge_for_object_storage(storage->capacity, months);
+        return object_storage_charge(storage->capacity, months);
     default:
         return 0;
     }
