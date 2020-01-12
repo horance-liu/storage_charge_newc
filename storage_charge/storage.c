@@ -39,7 +39,6 @@ static double charge_for_object_storage(int capacity, int months)
 
 double storage_charge(const Storage* storage, int months)
 {
-    double price = 0;
     switch (storage->type)
     {
     case ST_BLOCK_STORAGE:
@@ -49,9 +48,8 @@ double storage_charge(const Storage* storage, int months)
     case ST_OBJECT_STORAGE:
         return charge_for_object_storage(storage->capacity, months);
     default:
-        break;
+        return 0;
     }
-    return price;
 }
 
 #define MONTHS_OF_YEAR 12
