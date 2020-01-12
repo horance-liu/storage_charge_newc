@@ -38,3 +38,14 @@ double storage_charge(const Storage* storage, int months)
     }
     return price;
 }
+
+#define MONTHS_OF_YEAR 12
+
+int storage_level(const Storage* storage, int months)
+{
+    if ((storage->type == ST_OBJECT_STORAGE) && (months > MONTHS_OF_YEAR))
+    {
+        return 1;
+    }
+    return 0;
+}

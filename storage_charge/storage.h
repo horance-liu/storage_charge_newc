@@ -25,6 +25,7 @@ typedef struct StorageTag
 } Storage;
 
 double storage_charge(const Storage* storage, int months);
+int storage_level(const Storage* storage, int months);
 
 #ifdef __cplusplus
 }
