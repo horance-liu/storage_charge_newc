@@ -1,5 +1,5 @@
-#include "storage_charge/lease.h"
-#include "storage_charge/storage.h"
+#include "storage_charge/core/lease.h"
+#include "storage_charge/core/storage.h"
 
 double lease_charge(const Lease *lease)
 {

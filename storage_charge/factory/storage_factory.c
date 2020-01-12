@@ -1,4 +1,4 @@
-#include "storage_charge/storage_factory.h"
+#include "storage_charge/factory/storage_factory.h"
 #include "storage_charge/block/block_storage.h"
 #include "storage_charge/file/file_storage.h"
 #include "storage_charge/object/object_storage.h"

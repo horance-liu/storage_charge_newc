@@ -1,7 +1,7 @@
 #ifndef HAC6DA0FC_9308_4D5E_913B_AF818970CE7D
 #define HAC6DA0FC_9308_4D5E_913B_AF818970CE7D
 
-#include "storage_charge/storage_type.h"
+#include "storage_charge/core/storage_type.h"
 
 #ifdef __cplusplus
 extern "C" {

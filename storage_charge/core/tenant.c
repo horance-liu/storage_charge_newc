@@ -1,5 +1,5 @@
-#include "storage_charge/tenant.h"
-#include "storage_charge/lease.h"
+#include "storage_charge/core/tenant.h"
+#include "storage_charge/core/lease.h"
 
 void tenant_charge(const Tenant* tenant, double* total, int* levels)
 {
