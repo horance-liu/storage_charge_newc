@@ -17,6 +17,7 @@ typedef struct LeaseTag
 } Lease;
 
 double lease_charge(const Lease *lease);
+int lease_level(const Lease *lease);
 
 #ifdef __cplusplus
 }

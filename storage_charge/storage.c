@@ -1,16 +1,9 @@
 #include "storage_charge/storage.h"
 #include "storage_charge/lease.h"
 
-#define MONTHS_OF_YEAR 12
-
 static int level_for_lease(const Lease* lease)
 {
-    if ((lease->storage->type == ST_OBJECT_STORAGE)
-            && (lease->months > MONTHS_OF_YEAR))
-    {
-        return 1;
-    }
-    return 0;
+    return lease_level(lease);
 }
 
 void charge(const Tenant* tenant, double* total, int* levels)
