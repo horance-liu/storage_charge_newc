@@ -3,11 +3,6 @@
 
 #define MONTHS_OF_YEAR 12
 
-static double charge_for_lease(const Lease *lease)
-{
-    return lease_charge(lease);
-}
-
 static int level_for_lease(const Lease* lease)
 {
     if ((lease->storage->type == ST_OBJECT_STORAGE)
@@ -24,6 +19,6 @@ void charge(const Tenant* tenant, double* total, int* levels)
     {
         const Lease* lease = tenant->leases[i];
         *levels += level_for_lease(lease);
-        *total += charge_for_lease(lease);
+        *total += lease_charge(lease);
     }
 }
