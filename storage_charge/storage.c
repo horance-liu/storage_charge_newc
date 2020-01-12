@@ -5,6 +5,11 @@
 
 typedef double (*StorageCharge)(int capacity, int months);
 
+static double storage_charge_default(int capacity, int months)
+{
+    return 0;
+}
+
 static StorageCharge create_storage_charge(StorageType type)
 {
     switch (type)
@@ -16,14 +21,14 @@ static StorageCharge create_storage_charge(StorageType type)
     case ST_OBJECT_STORAGE:
         return object_storage_charge;
     default:
-        return 0;
+        return storage_charge_default;
     }
 }
 
 double storage_charge(const Storage* storage, int months)
 {
     StorageCharge charge = create_storage_charge(storage->type);
-    return charge != 0 ? charge(storage->capacity, months) : 0;
+    return charge(storage->capacity, months);
 }
 
 typedef int (*StorageLevel)(int months);
