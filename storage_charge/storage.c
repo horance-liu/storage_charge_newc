@@ -7,13 +7,8 @@ double storage_charge(const Storage* storage, int months)
     return charge(storage->capacity, months);
 }
 
-static StorageLevel create_storage_level(StorageType type)
-{
-    return create_storage_level_with_type(type);
-}
-
 int storage_level(const Storage* storage, int months)
 {
-    StorageLevel level = create_storage_level(storage->type);
+    StorageLevel level = create_storage_level_with_type(storage->type);
     return level(months);
 }
