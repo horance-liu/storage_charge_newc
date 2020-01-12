@@ -35,7 +35,7 @@ static StorageBase storage_default= {
     storage_charge_default, storage_level_default
 };
 
-StorageBase* storage_find(StorageType type)
+StorageBase* storage_registry_find(StorageType type)
 {
     return type < MAX_STORAGE_TYPE ? &storages[type] : &storage_default;
 }

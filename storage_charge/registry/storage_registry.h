@@ -17,7 +17,7 @@ typedef struct StorageBase
 } StorageBase;
 
 void storage_registry_register(StorageType type, StorageCharge, StorageLevel);
-StorageBase* storage_find(StorageType type);
+StorageBase* storage_registry_find(StorageType type);
 
 #ifdef __cplusplus
 }
