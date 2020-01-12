@@ -8,8 +8,10 @@ extern "C" {
 #endif
 
 typedef double (*StorageCharge)(int capacity, int months);
+typedef int (*StorageLevel)(int months);
 
 StorageCharge create_storage_charge(StorageType type);
+StorageLevel create_storage_level_with_type(StorageType type);
 
 #ifdef __cplusplus
 }
