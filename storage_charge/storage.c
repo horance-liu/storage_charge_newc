@@ -39,17 +39,22 @@ static double charge_for_lease(const Lease *lease)
     return price;
 }
 
+static int level_for_lease(const Lease* lease)
+{
+    if ((lease->storage->type == ST_OBJECT_STORAGE)
+            && (lease->months > MONTHS_OF_YEAR))
+    {
+        return 1;
+    }
+    return 0;
+}
+
 void charge(const Tenant* tenant, double* total, int* levels)
 {
     for (int index = 0; index < tenant->numOfLeases && index < MAX_NUM_LEASE; index++)
     {
         const Lease* lease = tenant->leases[index];
-        if ((lease->storage->type == ST_OBJECT_STORAGE)
-                && (lease->months > MONTHS_OF_YEAR))
-        {
-            *levels += 1;
-        }
-
+        *levels += level_for_lease(lease);
         *total += charge_for_lease(lease);
     }
 }
