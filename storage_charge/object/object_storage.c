@@ -30,5 +30,10 @@ static void object_storage_install(StorageBase* storage)
 
 void object_storage_register()
 {
-    storage_registry_register(ST_OBJECT_STORAGE, object_storage_install);
+    object_storage_register_with_type(ST_OBJECT_STORAGE);
+}
+
+void object_storage_register_with_type(StorageType type)
+{
+    storage_registry_register(type, object_storage_install);
 }
