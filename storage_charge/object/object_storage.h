@@ -7,7 +7,6 @@
 extern "C" {
 #endif
 
-void object_storage_register();
 void object_storage_register_with_type(StorageType type);
 
 #ifdef __cplusplus

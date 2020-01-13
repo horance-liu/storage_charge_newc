@@ -16,7 +16,7 @@ private:
     void SetUp() override
     {
         storage_registry_init();
-        object_storage_register();
+        object_storage_register_with_type(ST_OBJECT_STORAGE);
         file_storage_register(ST_FILE_STORAGE);
         block_storage_register(ST_BLOCK_STORAGE);
     }
