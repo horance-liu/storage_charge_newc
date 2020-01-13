@@ -8,6 +8,15 @@
 namespace 
 {
 
+/**
+ * 存储资源类型
+ * */
+typedef enum SingleStorageType
+{
+    ST_OBJECT_STORAGE, /* 对象存储 */
+    MAX_STORAGE_TYPE,
+} SingleStorageType;
+
 struct StorageTest : testing::Test
 {
 private:

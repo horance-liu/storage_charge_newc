@@ -5,16 +5,7 @@
 extern "C" {
 #endif
 
-/**
- * 存储资源类型
- * */
-typedef enum StorageType
-{
-    ST_BLOCK_STORAGE,  /* 块存储 */
-    ST_FILE_STORAGE,   /* 文件存储 */
-    ST_OBJECT_STORAGE, /* 对象存储 */
-    MAX_STORAGE_TYPE,
-} StorageType;
+typedef unsigned int StorageType;
 
 #ifdef __cplusplus
 }
