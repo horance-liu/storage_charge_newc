@@ -18,7 +18,9 @@ typedef struct StorageBase
 
 typedef void (*StorageInstall)(StorageBase*);
 
-void storage_registry_init();
+void storage_registry_init(StorageType size);
+void storage_registry_destroy();
+
 void storage_registry_register(StorageType type, StorageInstall install);
 StorageBase* storage_registry_find(StorageType type);
 
