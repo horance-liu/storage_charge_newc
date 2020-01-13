@@ -22,5 +22,10 @@ static void block_storage_install(StorageBase* storage)
 
 void block_storage_register()
 {
-    storage_registry_register(ST_BLOCK_STORAGE, block_storage_install);
+    block_storage_register_with_type(ST_BLOCK_STORAGE);
+}
+
+void block_storage_register_with_type(StorageType type)
+{
+    storage_registry_register(type, block_storage_install);
 }
