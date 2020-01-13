@@ -22,5 +22,10 @@ static void file_storage_install(StorageBase* storage)
 
 void file_storage_register()
 {
-    storage_registry_register(ST_FILE_STORAGE, file_storage_install);
+    file_storage_register_with_type(ST_FILE_STORAGE);
+}
+
+void file_storage_register_with_type(StorageType type)
+{
+    storage_registry_register(type, file_storage_install);
 }
