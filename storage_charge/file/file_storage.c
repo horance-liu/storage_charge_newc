@@ -20,11 +20,6 @@ static void file_storage_install(StorageBase* storage)
     storage->charge = file_storage_charge;
 }
 
-void file_storage_register()
-{
-    file_storage_register_with_type(ST_FILE_STORAGE);
-}
-
 void file_storage_register_with_type(StorageType type)
 {
     storage_registry_register(type, file_storage_install);
