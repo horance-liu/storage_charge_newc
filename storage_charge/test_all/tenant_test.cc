@@ -18,7 +18,7 @@ private:
         storage_registry_init();
         object_storage_register();
         file_storage_register();
-        block_storage_register();
+        block_storage_register_with_type(ST_BLOCK_STORAGE);
     }
 
 protected:

@@ -20,11 +20,6 @@ static void block_storage_install(StorageBase* storage)
     storage->charge = block_storage_charge;
 }
 
-void block_storage_register()
-{
-    block_storage_register_with_type(ST_BLOCK_STORAGE);
-}
-
 void block_storage_register_with_type(StorageType type)
 {
     storage_registry_register(type, block_storage_install);
