@@ -28,7 +28,7 @@ static void object_storage_install(StorageBase* storage)
     storage->level  = object_storage_level;
 }
 
-void object_storage_register_with_type(StorageType type)
+void object_storage_register(StorageType type)
 {
     storage_registry_register(type, object_storage_install);
 }
